@@ -41,58 +41,61 @@ export default function Home() {
       style={{
         minHeight: "100vh",
         background: "linear-gradient(135deg, #0b0015, #1a0033)",
-        backgroundAttachment: "fixed", // 👈 background fixed
-        color: "white",
+        backgroundAttachment: "fixed",
         display: "flex",
         justifyContent: "center",
-        alignItems: "flex-start",
-        padding: "40px 15px",
+        alignItems: "center", // 👈 Center card vertically
+        color: "white",
+        padding: "20px",
       }}
     >
       <div
         style={{
-          maxWidth: "450px",
+          maxWidth: "420px",
           width: "100%",
-          maxHeight: "90vh", // 👈 card ki max height
-          overflowY: "auto", // 👈 card ke andar scroll hoga
           padding: "30px",
           borderRadius: "20px",
           background: "#0d001a",
-          boxShadow: "0 0 30px rgba(0, 207, 255, 0.6)",
+          boxShadow: "0 0 25px rgba(0, 207, 255, 0.7)",
           textAlign: "center",
         }}
       >
-        {/* Avatar */}
+        {/* Logo */}
         <div
           style={{
-            width: "110px",
-            height: "110px",
+            width: "100px",
+            height: "100px",
             borderRadius: "50%",
-            margin: "0 auto 20px",
+            margin: "0 auto 15px",
             overflow: "hidden",
-            border: "3px solid #00cfff",
+            border: "2px solid #00cfff",
             boxShadow: "0 0 20px #00cfff",
           }}
         >
           <img
             src="https://i.postimg.cc/dVWsQpKw/IMG-20250913-WA0039.jpg"
-            alt="avatar"
+            alt="logo"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
         </div>
 
         {/* Title */}
-        <h1 style={{ color: "#00cfff", fontSize: "24px", marginBottom: "8px" }}>
-          𝑯𝑱𝑯 Instagram Video Downloader
-        </h1>
-        <span style={{ color: "gray", fontSize: "14px" }}>▄︻┻═┳一</span>
-
-        {/* Input */}
-        <label
-          style={{ display: "block", color: "#00cfff", marginTop: "20px" }}
+        <h1
+          style={{
+            color: "#00cfff",
+            fontSize: "22px",
+            marginBottom: "10px",
+          }}
         >
-          𝑷𝒂𝒔𝒕𝒆 𝑰𝒏𝒔𝒕𝒂 𝑼𝑹𝑳
+          HJH Instagram Video Downloader
+        </h1>
+
+        <label
+          style={{ display: "block", color: "#00cfff", marginTop: "15px" }}
+        >
+          Paste Insta URL
         </label>
+
         <input
           value={url}
           onChange={(e) => setUrl(e.target.value)}
@@ -110,7 +113,6 @@ export default function Home() {
           }}
         />
 
-        {/* Button */}
         <button
           onClick={fetchVideo}
           disabled={loading}
@@ -130,7 +132,6 @@ export default function Home() {
           {loading ? "Fetching..." : "🎬 Fetch Video"}
         </button>
 
-        {/* Video */}
         {videoUrl && (
           <>
             <video
@@ -138,9 +139,9 @@ export default function Home() {
               controls
               style={{
                 width: "100%",
-                marginTop: "18px",
-                borderRadius: "15px",
-                boxShadow: "0 0 20px #00cfff",
+                marginTop: "15px",
+                borderRadius: "12px",
+                boxShadow: "0 0 15px #00cfff",
               }}
             />
             <a
@@ -149,13 +150,12 @@ export default function Home() {
               style={{
                 display: "block",
                 marginTop: "12px",
-                padding: "14px",
+                padding: "12px",
                 borderRadius: "30px",
                 border: "2px solid #00cfff",
                 color: "#00cfff",
                 textDecoration: "none",
                 fontWeight: "bold",
-                transition: "0.3s",
               }}
             >
               ⬇ Download Video
@@ -163,13 +163,12 @@ export default function Home() {
           </>
         )}
 
-        {/* Footer */}
-        <div style={{ marginTop: "25px", fontSize: "14px", color: "gray" }}>
+        <div style={{ marginTop: "20px", fontSize: "13px", color: "gray" }}>
           <span style={{ color: "#00cfff", fontWeight: "bold" }}>
-            Developed By ▄︻┻═┳一𝐇𝐉𝐇 𝐇𝐀𝐂𝐊𝐄𝐑🔥
+            Developed By ▄︻┻═┳一 HJH HACKER 🔥
           </span>
         </div>
       </div>
     </div>
   );
-          }
+      }
