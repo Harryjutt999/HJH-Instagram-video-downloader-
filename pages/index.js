@@ -39,21 +39,23 @@ export default function Home() {
   return (
     <div
       style={{
-        height: "100vh", // 👈 Full screen height (no scroll)
-        overflow: "hidden", // 👈 Disable scroll
+        minHeight: "100vh",
         background: "linear-gradient(135deg, #0b0015, #1a0033)",
-        backgroundAttachment: "fixed",
+        backgroundAttachment: "fixed", // background fix
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        color: "white",
+        padding: "20px",
+        boxSizing: "border-box",
       }}
     >
       <div
         style={{
-          maxWidth: "420px",
           width: "100%",
-          padding: "30px",
+          maxWidth: "420px",
+          maxHeight: "95vh", // 👈 Card height fixed
+          overflowY: "auto", // 👈 Card ke andar scroll enable
+          padding: "25px",
           borderRadius: "20px",
           background: "#0d001a",
           boxShadow: "0 0 25px rgba(0, 207, 255, 0.7)",
@@ -163,4 +165,4 @@ export default function Home() {
       </div>
     </div>
   );
-}
+    }
