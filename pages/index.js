@@ -39,14 +39,14 @@ export default function Home() {
   return (
     <div
       style={{
-        minHeight: "100vh",
+        height: "100vh", // 👈 Full screen height (no scroll)
+        overflow: "hidden", // 👈 Disable scroll
         background: "linear-gradient(135deg, #0b0015, #1a0033)",
         backgroundAttachment: "fixed",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center", // 👈 Center card vertically
+        alignItems: "center",
         color: "white",
-        padding: "20px",
       }}
     >
       <div
@@ -60,7 +60,6 @@ export default function Home() {
           textAlign: "center",
         }}
       >
-        {/* Logo */}
         <div
           style={{
             width: "100px",
@@ -79,14 +78,7 @@ export default function Home() {
           />
         </div>
 
-        {/* Title */}
-        <h1
-          style={{
-            color: "#00cfff",
-            fontSize: "22px",
-            marginBottom: "10px",
-          }}
-        >
+        <h1 style={{ color: "#00cfff", fontSize: "22px", marginBottom: "10px" }}>
           HJH Instagram Video Downloader
         </h1>
 
@@ -171,4 +163,4 @@ export default function Home() {
       </div>
     </div>
   );
-      }
+}
