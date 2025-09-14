@@ -1,0 +1,9 @@
+{
+  "name": "hjh-instagram-downloader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "instagram-url-direct": "^2.0.0"
+  }
+}
