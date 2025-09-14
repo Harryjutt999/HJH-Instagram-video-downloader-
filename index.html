@@ -14,7 +14,6 @@
       text-align: center;
       overflow: hidden;
     }
-
     .card {
       margin: 60px auto;
       padding: 25px;
@@ -40,7 +39,8 @@
     }
     h1 {
       font-size: 22px;
-      margin: 0 0 10px;
+      margin: 0;
+      margin-bottom: 10px;
       color: #00cfff;
     }
     .subtitle {
@@ -155,15 +155,16 @@
         });
 
         const data = await res.json();
+        console.log("API Response:", data);
 
-        if (res.ok && data.videoUrl) {
+        if (data.videoUrl) {
           videoTag.src = data.videoUrl;
           videoBox.style.display = "block";
           downloadVideo.style.display = "inline-block";
           downloadVideo.href = data.videoUrl;
           downloadVideo.download = "instagram-video.mp4";
         } else {
-          alert(data.error || "Video not found!");
+          alert("Video link not found!");
         }
       } catch (err) {
         console.error(err);
