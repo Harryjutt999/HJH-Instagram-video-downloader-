@@ -1,4 +1,4 @@
-import * as instagramGetUrl from "instagram-url-direct";
+import instagramGetUrl from "instagram-url-direct";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -12,10 +12,10 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Use getInfo function from the library
-    const result = await instagramGetUrl.getInfo(url);
+    // Use the default function directly
+    const result = await instagramGetUrl(url);
 
-    if (!result.url_list || result.url_list.length === 0) {
+    if (!result || !result.url_list || result.url_list.length === 0) {
       return res.status(404).json({ error: "No video found at this URL" });
     }
 
