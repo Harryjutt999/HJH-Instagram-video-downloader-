@@ -1,4 +1,4 @@
-import instagramGetUrl from "instagram-url-direct";
+import getUrl from "instagram-url-direct";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const result = await instagramGetUrl(url);
+    const result = await getUrl(url);
 
     if (!result.url_list || result.url_list.length === 0) {
       return res.status(404).json({ error: "No video found at this URL" });
@@ -20,6 +20,9 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ videoUrl: result.url_list[0] });
   } catch (err) {
-    return res.status(500).json({ error: "Failed to fetch Instagram video: " + err.message });
+    console.error(err);
+    return res
+      .status(500)
+      .json({ error: "Failed to fetch Instagram video: " + err.message });
   }
 }
